@@ -1,0 +1,79 @@
+{%  extends 'event/main.html' %}
+
+{% block content %}
+
+
+    <br>
+    <div class="row">
+        <div class="col-md">
+            <div class=""card card-body>
+                <h5>Participants:</h5>
+                <hr>
+                <a class="btn btn-outline-info  btn-sm btn-block" href="">Update Participant</a>
+                <a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'create_event' participant.id %}">Participate in a new event</a>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Contact</h5>
+                <hr>
+                <p>Email:{{participant.email}}</p>
+                <p>Phone:{{participant.phone}} </p>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Total Events</h5>
+                <hr>
+                <h1 style="text-align: center; padding: 10px">{{event_count}}</h1>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <form method="get">
+                    {{myFilter.form}}
+
+                <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Event</th>
+                        <th>Category</th>
+                        <th>Starting date</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+
+                    {% for event in events %}
+                    <tr>
+                        <td>{{event.event}}</td>
+                        <td>{{event.event.category}}</td>
+                        <td>{{event.date_created}}</td>
+                        <td>{{event.status}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'update_event' event.id %}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

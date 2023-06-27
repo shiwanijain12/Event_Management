@@ -1,0 +1,45 @@
+{% load static %}
+<style>
+
+  .whole{
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .whole a {
+    float: left;
+    color:antiquewhite;
+    text-align:center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .whole a:hover {
+    background-color: #ddd;
+    color:black;
+  }
+
+  .whole a.home {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .whole a.hello-msg {
+    float:right;
+    color:antiquewhite;
+    text-align:center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+</style>
+
+<nav class="whole">
+    <div class="h_and_p">
+      <a class="home" href="{% url 'home' %}">Dashboard</a>
+      <a class="products" href="{% url 'products' %}">Events</a>
+      <a class="hello-msg" href="{% url 'logout' %}">Logout</a>
+      <a class="hello-msg">Hello, {{request.user}}</a>
+    </div>
+  </nav>

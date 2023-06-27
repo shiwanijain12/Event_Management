@@ -1,0 +1,64 @@
+{%  extends 'event/main.html' %}
+
+{% block content %}
+
+{%  include 'event/status.html' %}
+
+
+<br>
+
+<div class="row">
+    <div class="col-md-5">
+        <h5>PARTICIPANTS:</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="">Create Participant</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Participant</th>
+                    <th>Phone</th>
+                </tr>
+
+                {% for participant in participants %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'participant' participant.id %}">View</a></td>
+                        <td>{{participant.name}}</td>
+                        <td>{{participant.phone}}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <h5>RECENT EVENTS</h5>
+        <hr>
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Event</th>
+                    <th>Event Started on</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                {% for event in events %}
+                    <tr>
+                        <td>{{event.event}}</td>
+                        <td>{{event.date_created}}</td>
+                        <td>{{event.status}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'update_event' event.id %}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_event' event.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+
+                
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

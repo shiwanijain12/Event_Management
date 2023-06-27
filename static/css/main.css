@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(225, 216, 204);
+}
+#total-events{
+    background-color: rgb(15, 32, 26);
+}
+
+#events-completed{
+    background-color: rgb(209, 126, 24);
+}
+#events-pending{
+    background-color: coral;
+}
+
+
