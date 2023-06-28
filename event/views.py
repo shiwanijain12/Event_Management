@@ -109,7 +109,7 @@ def updateEvent(request, pk):
             return redirect('/')
         
     context={'form': form}
-    return render(request, 'event/event_form.html', context)
+    return render(request, 'event/update_form.html', context)
 
 @login_required(login_url='login')
 def deleteEvent(request,pk):
@@ -120,4 +120,3 @@ def deleteEvent(request,pk):
     
     context={'item':event}
     return render(request, 'event/delete.html', context)
-

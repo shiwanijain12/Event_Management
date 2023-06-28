@@ -4,8 +4,7 @@ from .models import *
 
 class EventFilter(django_filters.FilterSet):
     start_date=DateFilter(field_name="date_created", lookup_expr='gte')
-    end_date=DateFilter(field_name="date_created", lookup_expr='lte')
     class Meta:
         model=Event
         fields='__all__'
-        exclude=['participant', 'date_created']
+        exclude=['participant', 'date_created', 'review']
