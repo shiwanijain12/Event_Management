@@ -8,13 +8,13 @@
 		margin: 0;
 		padding: 0;
 		height: 100%;
-		background: #7abecc;
+		background: #bed6da;
 	}
 	.user_card {
 		width: 350px;
 		margin-top:auto ;
 		margin-bottom: auto;
-		background: #74cfbf;
+		background: #27d8c4;
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -32,7 +32,7 @@
 	}
 
 	#form-title{
-		color: #050202;
+		color: #f9f7f7;
 	}
 	.login_btn {
 		width: 100%;
@@ -74,25 +74,25 @@
 					{% csrf_token %}
 					<div class="input-group mb-3">
 						<div class="input-group-append">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"></span>
 						</div>
 						{{form.username}}
 					</div>
 					<div class="input-group mb-2">
 						<div class="input-group-append">
-							<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+							<span class="input-group-text"></span>
 						</div>
 						{{form.email}}
 					</div>
 					<div class="input-group mb-2">
 						<div class="input-group-append">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"></span>
 						</div>
 						{{form.password1}}
 					</div>
 					<div class="input-group mb-2">
 						<div class="input-group-append">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
+							<span class="input-group-text"></span>
 						</div>
 						{{form.password2}}
 					</div>
